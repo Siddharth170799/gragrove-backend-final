@@ -3,7 +3,7 @@ import StudentLandingSchema from "../Schema/StudentLandingPage.js";
 import StudentSignUpDetails from "../Schema/StudentSignUpDetails.js";
 import jwt from "jsonwebtoken";
 import StudentLoginSchema from "../Schema/StudentLoginSchema.js";
-import { message } from "antd";
+
 
 const StudentRoute = express.Router();
 StudentRoute.get("/getStudent", async (req, res) => {
