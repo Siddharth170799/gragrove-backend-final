@@ -4,7 +4,7 @@ import StudentSignUpDetails from "../Schema/StudentSignUpDetails.js";
 import jwt from "jsonwebtoken";
 import StudentLoginSchema from "../Schema/StudentLoginSchema.js";
 import { message } from "antd";
-// import Twilio from "twilio/lib/rest/Twilio.js";
+
 const StudentRoute = express.Router();
 StudentRoute.get("/getStudent", async (req, res) => {
   try {
@@ -90,25 +90,6 @@ StudentRoute.get("/studentSignUpDetails", async (req, res) => {
   const details = await StudentSignUpDetails.find();
   res.send(details);
 });
-// StudentRoute.post('/sendotp',async(req,res)=>{
 
-//   const details= req.body.phoneNumber;
-//   console.log(details,"hi")
-//   try{
-
-// const client = new Twilio('AC1518c90203e8aa15ad4dba70f2e9ea08', '4e8fc4257ff459f60b584f732387af32');
-
-// client.messages.create({
-//   body: 'Your OTP code is 123456',
-//   to: `+91${details}`,
-//   from: '+1 240 312 3896'
-// })
-// .then((message) => console.log(message.sid))
-// .catch((error) => console.error(error));
-
-//   }catch(err){
-//     console.log(err,"error occurred")
-//   }
-// })
 
 export default StudentRoute;
